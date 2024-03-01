@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<article class="article-recent">
+          
+    <div class="article-recent-main">
+        
+        <h2  class="article-title">{{blog.head}}</h2>
+        <p class="article-body">{{blog.para}}</p>
+        <a href="{% url 'delete' id=blog.id %}" class="btn  btn-danger" id="delete">Delete</a>
+        <a href="{% url 'edit' id=blog.id %}" class="btn btn-warning" id="edits1">Edit</a>
+
+
+    </div>
+    <div class="article-recent-secondary">
+        <img src="{{blog.image.url}}" class="article-image" >
+    </div>
+
+    
+</article>
+{% endblock %}

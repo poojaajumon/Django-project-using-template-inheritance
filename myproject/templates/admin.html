@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+
+<form method="post" action="{% url 'add'%}" enctype="multipart/form-data">
+    {% csrf_token %}
+<article class="article-recent">
+          
+    <div class="article-recent-main">
+        <label for="" id="labels"> Head: </label>
+        <input type="text" class="article-title"  id="head1" name="head" > <br>
+        <label for="" id="labels"> Description: </label> <br>
+        <textarea name="para" rows="6" cols="50" class="article-body" id="area" ></textarea>
+       
+       
+    <div class="article-recent-secondary">
+      
+    <label for="" id="labels"> Image: </label> <input type="file" name="image" id="files">
+    </div>
+
+    <input type="submit" value="Submit" id="submits" class="btn btn-success">
+    </div>
+</article>
+</form>
+<!-- <form method="post" action="{% url 'add' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <article class="article-recent">
+        <div class="article-recent-main">
+            <label for="head1" id="labels">Head:</label>
+            <input type="text" class="article-title" id="head1" name="head"> <br>
+            <label for="area" id="labels">Description:</label> <br>
+            <textarea name="para" rows="6" cols="50" class="article-body" id="area"></textarea>
+
+            <div class="article-recent-secondary">
+                <label for="files" id="labels">Image:</label>
+                <input type="file" name="image" id="files">
+            </div>
+
+            <input type="submit" value="Submit" id="submits" class="btn btn-success">
+        </div>
+    </article>
+</form> -->
+
+
+
+</body>
+{% endblock %}
+</html>

@@ -9,6 +9,21 @@
 </head>
 {% block content %}
 <body>
+    <div>
+        {% for msg in messages %}
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div style="text-align: center;">
+            {{ msg}}
+            </div>
+            <div>
+                <img src="{% static './images/success.png'%}"  alt="" style="height: 100px;">
+            </div> 
+        </div>
+           
+    {% endfor %}
+</div>
+
 
 <form method="post" action="{% url 'add'%}" enctype="multipart/form-data">
     {% csrf_token %}
